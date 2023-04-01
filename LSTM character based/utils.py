@@ -26,7 +26,8 @@ def load_data(train):
     data = {}
     types = {}
     # insert the data fields used for training later
-    used_fields = ['postText', 'targetTitle']
+    used_fields = ['uuid']
+    # used_fields = ['targetTitle', 'postText']
     # used_fields = ['postText', 'targetParagraphs', 'targetTitle']
 
     # fill two dicts data and types from the jsonl-file
