@@ -11,4 +11,4 @@ This is the code base for the final project of the group spam in the course Adva
     + DeBERTa : **deberta_postText_targetTitle.ipynb**
  - Hyper-parameters can be adjusted in the second cell of the individual transformer's notebook file
  - Start the training and evaluation by running the third cell, which contains the function train_eval_pipeline
- - The results will be output to a DataFrame call _dataframe_
+ - The results will be output to a DataFrame - _dataframe_
