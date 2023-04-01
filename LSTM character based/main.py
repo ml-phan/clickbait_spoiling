@@ -48,7 +48,7 @@ def evaluation(model):
 
     total = 0
     correct = 0
-
+    accuracy = 0
     for key, text in test_data.items():
         prediction = predict(model, text)
         total += 1
@@ -76,4 +76,9 @@ def make_model(hidden_size, learning_rate):
 
 def main():
     """Returns the model with the best hyperparameters and its accuracy. """
-    return make_model(HIDDEN_SIZE, LEARNING_RATE)
+    hidden_dims = [64, 96, 128, 256, 512]
+    learning_rates = [0.0004, 0.0005, 0.001, 0.002, 0.004, 0.005]
+    results = {}
+    for learning_rate in learning_rates:
+        for hidden_size in hidden_dims:
+            results[f"{learning_rate}_{hidden_size}"] = make_model(learning_rate, hidden_size)
