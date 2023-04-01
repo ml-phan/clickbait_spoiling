@@ -16,9 +16,9 @@ def load_data(train):
 
     # Test oder validation file
     if train is True:
-        file = './data/train.jsonl'
+        file = './char_data/train.jsonl'
     else:
-        file = './data/validation.jsonl'
+        file = './char_data/validation.jsonl'
 
     with open(file) as jsonl_file:
         jsonl_file = list(jsonl_file)
