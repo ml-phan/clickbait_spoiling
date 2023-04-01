@@ -1,8 +1,8 @@
 # fp_spam
 
 This is the code base for the final project of the group spam in the course Advanced Natural Language Processing. 
-This is a test edit.
 
+## Phan
 ## How to run transformers
  - Every necessary functions and libraries are defined in /transformers_pre_trained/training_pipeline.ipynb
  - Each transformer model can be re-trained using their respective notebook file:
