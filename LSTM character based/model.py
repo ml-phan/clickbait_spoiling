@@ -22,8 +22,8 @@ class LSTM(nn.Module):
     def forward(self, x):
 
         # initialize hidden and cell states
-        h0 = torch.zeros(self.num_layers, x.size(1), self.hidden_size).to(self.device)
-        c0 = torch.zeros(self.num_layers, x.size(1), self.hidden_size).to(self.device)
+        h0 = torch.rand(self.num_layers, x.size(1), self.hidden_size).to(self.device)
+        c0 = torch.rand(self.num_layers, x.size(1), self.hidden_size).to(self.device)
 
         # send through lstm layer, drop first dimension and through fc layer
         out, _ = self.lstm(x, (h0, c0))
