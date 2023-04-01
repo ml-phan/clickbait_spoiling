@@ -4,7 +4,7 @@ import json
 import string
 import torch
 import unicodedata
-
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # define all avaiable characters
 STRINGS = string.printable
@@ -20,7 +20,7 @@ def load_data(train):
     else:
         file = './char_data/validation.jsonl'
 
-    with open(file) as jsonl_file:
+    with open(file, encoding="utf-8") as jsonl_file:
         jsonl_file = list(jsonl_file)
 
     data = {}
@@ -56,7 +56,7 @@ def unicode_to_ascii(s):
 def create_input_matrix(text):
     """ Turns a string into a matrix of one-hot vectors. """
 
-    matrix = torch.zeros(len(text), 1, NUM_SYMBOLS)
+    matrix = torch.zeros(len(text), 1, NUM_SYMBOLS).to(device)
     for idx, symbol in enumerate(text):
         matrix[idx][0][STRINGS.index(symbol)] = 1
     return matrix
@@ -72,6 +72,6 @@ def data_handler(data, types):
         # creating gold label
         target_class = types[key]
         class_list = list(set(types.values()))
-        gold_label = torch.tensor([class_list.index(target_class)], dtype=torch.long)
+        gold_label = torch.tensor([class_list.index(target_class)], dtype=torch.long).to(device)
 
         yield clickbait_matrix, gold_label
