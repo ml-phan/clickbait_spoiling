@@ -23,13 +23,13 @@ NUM_CLASSES = len(class_list)
 TRAIN_SIZE = len(data)
 
 # parameter model
-HIDDEN_SIZE = 32
+HIDDEN_SIZE = 96
 NUM_LAYERS = 2
 BATCH_SIZE = 1
 
 # parameter training
 NUM_EPOCHS = 10
-LEARNING_RATE = 0.005
+LEARNING_RATE = 0.0005
 
 
 def predict(model, text):
