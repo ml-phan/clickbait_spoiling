@@ -30,4 +30,6 @@ This repository consits of three different machine learning approaches to the ta
 - Hyperparameters can be adjustet at the beginning of the *main.py* file
 
 ### How to run the word-based LSTM
-- 
+- clone the .ipynb file to the local machine
+- open the notebook in Google Colab or Jupyter
+- run the cells in the order they appear
